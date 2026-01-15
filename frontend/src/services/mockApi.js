@@ -1,15 +1,6 @@
+/* eslint-disable no-unused-vars */
 export const mockApi = {
-  submitDailyLog: async (data) => {
-    console.log("Daily log submitted", data);
-    return { logId: "LOG-001" };
-  },
-
-  uploadPhoto: async (photoData) => {
-    console.log("Photo uploaded", photoData);
-    return { verified: true };
-  },
-
-  getDashboard: async () => {
+    getDashboard: async () => {
     return {
       status: "Report Submitted",
       progress: {
@@ -23,5 +14,18 @@ export const mockApi = {
         committed: 1800000
       }
     };
+  },
+  login: async (phone) => {
+    return { user: "Foreman", project: "Meru Residential Build" };
+  },
+
+  submitDailyLog: async (data) => {
+    console.log("Daily log:", data);
+    return { logId: "LOG-001" };
+  },
+
+  uploadPhoto: async (photo) => {
+    console.log("Photo uploaded:", photo.type);
+    return { verified: true };
   }
 };
